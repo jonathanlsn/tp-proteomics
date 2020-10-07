@@ -37,7 +37,7 @@ Cette partie du TP est découpée en 4 grandes parties avec pour chacune des par
 ##### En quoi consiste l’approche Shotgun proteomics?
 
 ```
-
+L'approche shotgun consiste à identifier des protéine à partir des résultats de spectrométrie de masse et des bases de données.
 ```
 
 ##### Quel est l’objectif de cette approche ?
@@ -65,7 +65,7 @@ Cette partie du TP est découpée en 4 grandes parties avec pour chacune des par
 ##### Existe t’il d’autres types de bases de données pour réaliser l’identification des peptides trypsiques dans un spectre?
 
 ```
-
+Données transcriptomiques. On part du transcriptome et on va aboutir a des donnée protéomiques.
 ```
 
 ##### Est-ce qu’il est possible d’identifier des peptides sans base de données?
@@ -74,7 +74,7 @@ Cette partie du TP est découpée en 4 grandes parties avec pour chacune des par
 ```
 ##### Combien de protéines sont identifiées dans le protéome bactérien?
 ```
-
+environ 4391
 ```
 ##### Comment la liste des séquences des protéines est-elle établie ? Est-elle complète? 
 ```
@@ -86,11 +86,11 @@ Cette partie du TP est découpée en 4 grandes parties avec pour chacune des par
 ```
 ##### A quoi correspond la protéine P00761 et quelle est sa fonction ? 
 ```
-
+C'est la trypsine et elle permet de faire la digestion
 ```
 ##### Pourquoi doit-on rajouter cette protéine dans le fichier FASTA final du protéome bactérien?
 ```
-
+On veut s'affrenchir de fausse identification
 ```
 
 ### Création de la « peak list »
