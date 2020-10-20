@@ -37,13 +37,13 @@ Cette partie du TP est découpée en 4 grandes parties avec pour chacune des par
 ##### En quoi consiste l’approche Shotgun proteomics?
 
 ```
-
+Comparaison de la liste des masses des fragments des peptides trypsiques expérimentaux avec les listes des masses des peptides trypsiques issus de la digestion théorique des protéines des banques de données
 ```
 
 ##### Quel est l’objectif de cette approche ?
 
 ```
-
+Elle permet d'identifier des protéines issus d'un mélange complexe du protéome d'un organisme
 ```
 
 #### Procédure
@@ -59,22 +59,22 @@ Cette partie du TP est découpée en 4 grandes parties avec pour chacune des par
 ##### L’identification des protéines/ peptides se réalise grâce à une base de données de protéines. Quelle comparaison va être effectuée?
 
 ```
-
+Une comparaison des poids des proteines/ peptides
 ```
 
 ##### Existe t’il d’autres types de bases de données pour réaliser l’identification des peptides trypsiques dans un spectre?
 
 ```
-
+Non il n'y en a pas
 ```
 
 ##### Est-ce qu’il est possible d’identifier des peptides sans base de données?
 ```
-
+Oui on peut utiliser la cristallographie du solide à condition que la taille du peptide ne soit pas trop importante
 ```
 ##### Combien de protéines sont identifiées dans le protéome bactérien?
 ```
-
+4,391 protéines ont été identifiées dans le protéome bactérien de E. Coli
 ```
 ##### Comment la liste des séquences des protéines est-elle établie ? Est-elle complète? 
 ```
@@ -82,15 +82,15 @@ Cette partie du TP est découpée en 4 grandes parties avec pour chacune des par
 ```
 ##### Quelle est la différence entre des séquences Swiss-prot et TremBL?
 ```
-
+Les séquences Swiss-prot sont plus riches en annotions et ont peu de redondances contrairement à TremBL qui est annoté numériquement et contient plus de séquences redondantes
 ```
 ##### A quoi correspond la protéine P00761 et quelle est sa fonction ? 
 ```
-
+Il s'agit de la Trypsine. Elle cleave les liaisons peptidique après les Arginines et des Lysines
 ```
 ##### Pourquoi doit-on rajouter cette protéine dans le fichier FASTA final du protéome bactérien?
 ```
-
+On ajoute cette protéine car elle a été introduite expérimentalement au protéome pour effectuer le cleavage des peptides.
 ```
 
 ### Création de la « peak list »
@@ -114,7 +114,7 @@ De nombreux petits logiciels existent pour convertir vos fichiers bruts dans un 
 ##### Les données de QExactive ont été enregistrées en mode centroïde et non pas en mode Profiling. D’après vous quelle est la différence entre les deux modes?
 
 ```
-
+Pour le mode centroïde on considère la moyenne de la distribution et en mode profiling  normalisation par la loi moyennee des rapports
 ```
 
 ### Identification des peptides par approche PSM Peptide to Spectrum Matching
@@ -137,28 +137,35 @@ NB : si vous avez des messages d’erreur qui s’affichent (missing precursor c
 #### Questions 
 ##### Pourquoi est-il important de bien choisir sa base de données?
 ```
+Le choix de la base de données utilisée est importante pour obteniir des annotations fiables et des séquences de bonnes qualité pour ne pas biaiser la recherche de séquences
 ```
 ##### Est-ce que l’on retrouvera toujours les mêmes protéines au cours du temps ?
 ```
+Non, on obtiendra aussi des protéines souvent homologues qui ont des séquencces proches
 ```
 
 ##### Comment la taille de la base de données peut affecter le score de la protéine recherchée?
 ```
+Le score prend en compte la fréquence d'apparition du peptide dans la base de donnée et qui est dépendante de la taille de cette dernière. 
 ```
 
 ##### Est-ce que les modifications ajoutées sont les seules modifications que l’on peut attendre dans une expérience de shotgun proteomics?
 ```
+Non il y a encore beaucoup d'autres modificiation possible
 ```
 
 ##### Vous avez choisi la trypsine comme enzyme et choisi « specific », qu’est-ce que cela signifie, et comment cela peut affecter le processing ? 
 ```
+Dans ce cas on considère au cours du processing que la trysine a cleavé toute les liaison peptidiques auxquelles il est spécifique : Arginine et Lysine
 ```
 
 ##### Qu’est-ce qu’un missed cleavage ? pourquoi 2 et pas 0 ?
 ```
+Il y a miscleavage lorsque la trypsine ne coupe pas une liaisons peptidique après une arginine ou une Lysine
 ```
 ##### Qu’est-ce que la tolérance en masse, comment la calcule-t-on ?
 ```
+La tolérance de masse correspond à l'écart toléré entre la masse du peptide relevé expérimentalement et celle du peptide issus de la base de donnée avec lequel matche 
 ```
 
 ### Visualisation des PSM, peptides - protéines
@@ -301,8 +308,8 @@ Representer graphiquement les données d'abondance et construire la pvalue des f
 
 ##### 3. A partir de cette échantillon de ratio d'abondance,  estimez la moyenne <img src="https://render.githubusercontent.com/render/math?math=\mu"> et l'ecart-type <img src="https://render.githubusercontent.com/render/math?math=\sigma"> d'une loi normale.
 ```
-
-
+moyenne = -0.638
+écart-type = 0.2216
 ```
 
 ##### 4. Superposez la densité de probabilité de cette loi sur l'histogramme. Attention, la densité de probabilité devra être mis à l'echelle de l'histogramme (cf ci-dessous)
@@ -316,12 +323,12 @@ scale = len(_)*dx # scale accordingly
 ax.plot(x, norm.pdf(x, mu, sqrt(S_2))*scale) # compute theoritical PDF and draw it
 ```
 
-![Histogramme à inserez ici](histogram_log2FC.png "Title")
+![Histogramme à inserez ici](histogram_log2FC.PNG "Title")
 
 ##### 5. Quelles remarques peut-on faire à l'observation de l'histogramme et de loi théorique?
 
 ```
-
+La distribution ne semble pas suivre une loi normale.
 
 ```
 
@@ -335,7 +342,7 @@ Sont condidérées comme surabondantes les proteines remplissant ces deux critè
 * <img src="https://render.githubusercontent.com/render/math?math=\text{Log}_2(\text{abundance ratio})\gt\mu%2B\sigma">  
 * <img src="https://render.githubusercontent.com/render/math?math=\text{p-value}>0.001">
 
-![Volcano plot + quadrant à inserez ici](histogram_log2FC.png "Title")
+![Volcano plot + quadrant à inserez ici](Volcano_plot.PNG "Title")
 
 ### Analyse Fonctionelle de pathway
 
@@ -345,8 +352,8 @@ Nous allons implementer une approche ORA (Over Representation Analysis) naive.
 
 Quelles sont leurs identifiants UNIPROT ?
 ``` 
-
-
+Les identifiants UNIPROT des protéines surabondantes sont :
+P75936, P76231, P0A8S9, P05706 et P29744
 
 ```
 
