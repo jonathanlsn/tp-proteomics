@@ -37,7 +37,7 @@ Cette partie du TP est découpée en 4 grandes parties avec pour chacune des par
 ##### En quoi consiste l’approche Shotgun proteomics?
 
 ```
-Comparaison de la liste des masses des fragments des peptides trypsiques expérimentaux avec les listes des masses des peptides trypsiques issus de la digestion théorique des protéines des banques de données
+L'approche shotgun consiste à identifier des protéine à partir des résultats de spectrométrie de masse et des bases de données.
 ```
 
 ##### Quel est l’objectif de cette approche ?
@@ -65,7 +65,7 @@ Une comparaison des poids des proteines/ peptides
 ##### Existe t’il d’autres types de bases de données pour réaliser l’identification des peptides trypsiques dans un spectre?
 
 ```
-Non il n'y en a pas
+Oui il existe les bases de données transcriptomiques. On part du transcriptome et on va aboutir a des donnée protéomiques.
 ```
 
 ##### Est-ce qu’il est possible d’identifier des peptides sans base de données?
@@ -74,7 +74,7 @@ Oui on peut utiliser la cristallographie du solide à condition que la taille du
 ```
 ##### Combien de protéines sont identifiées dans le protéome bactérien?
 ```
-4,391 protéines ont été identifiées dans le protéome bactérien de E. Coli
+4391 protéines ont été identifiées dans le protéome bactérien de E. Coli
 ```
 ##### Comment la liste des séquences des protéines est-elle établie ? Est-elle complète? 
 ```
@@ -86,11 +86,11 @@ Les séquences Swiss-prot sont plus riches en annotions et ont peu de redondance
 ```
 ##### A quoi correspond la protéine P00761 et quelle est sa fonction ? 
 ```
-Il s'agit de la Trypsine. Elle cleave les liaisons peptidique après les Arginines et des Lysines
+Il s'agit de la Trypsine. Elle elle permet de faire la digestion des protéines en cleavant les liaisons peptidique après les Arginines et des Lysines
 ```
 ##### Pourquoi doit-on rajouter cette protéine dans le fichier FASTA final du protéome bactérien?
 ```
-On ajoute cette protéine car elle a été introduite expérimentalement au protéome pour effectuer le cleavage des peptides.
+On veut s'affrenchir de fausse identification
 ```
 
 ### Création de la « peak list »
