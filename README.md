@@ -70,7 +70,7 @@ Oui il existe les bases de données transcriptomiques. On part du transcriptome 
 
 ##### Est-ce qu’il est possible d’identifier des peptides sans base de données?
 ```
-Oui on peut utiliser la cristallographie du solide à condition que la taille du peptide ne soit pas trop importante
+Oui on peut utiliser la RMN à condition que la taille du peptide ne soit pas trop importante
 ```
 ##### Combien de protéines sont identifiées dans le protéome bactérien?
 ```
